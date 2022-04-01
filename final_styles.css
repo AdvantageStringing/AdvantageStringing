@@ -846,7 +846,7 @@ textarea:focus {
 
 /* Pricing */
 .pricing {
-  height: 880px;
+  height: auto;
 }
 
 .pricing h1 {
