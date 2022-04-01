@@ -871,8 +871,8 @@ textarea:focus {
 
 .pricing .grid,
 .pricing .grid-3 {
-  -ms-grid-rows: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  -ms-grid-rows: 0.2fr 1fr 0.7fr;
+  grid-template-rows: 0.2fr 1fr 0.7fr;
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
