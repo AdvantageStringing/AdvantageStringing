@@ -301,10 +301,16 @@ textarea:focus {
   /* Could be more or less, depending on screen size */
 }
 
+.help-dialog-header .flex,
+.complete-dialog-header .flex,
+.mystery-dialog-header .flex {
+  justify-content: end;
+}
+
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
   margin-right: 15px;
 }
@@ -869,10 +875,9 @@ textarea:focus {
   margin-top: 20px;
 }
 
-.pricing .grid,
-.pricing .grid-3 {
-  -ms-grid-rows: 0.2fr 1fr 0.7fr;
-  grid-template-rows: 0.2fr 1fr 0.7fr;
+.pricing .grid {
+  -ms-grid-rows: 0.2fr 1fr;
+  grid-template-rows: 0.2fr 1fr;
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -885,13 +890,6 @@ textarea:focus {
 
 .pricing .grid > *:first-child,
 .pricing .grid-3 > *:first-child {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / span 3;
-}
-
-.pricing .grid > *:last-child,
-.pricing .grid-3 > *:last-child {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / span 3;
@@ -963,8 +961,8 @@ textarea:focus {
   transform-style: preserve-3d;
 }
 
-.strings .card:hover .card-inner,
-.strings .pricing-card:hover .card-inner {
+
+.strings .card:hover .card-inner {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
@@ -1017,9 +1015,11 @@ textarea:focus {
   gap: 10px;
 }
 
-.flip-icon .flex {
-  color: #0041a9;
+.front-flip-icon .flex {
   justify-content: end;
+}
+.back-flip-icon .flex {
+  justify-content: start;
 }
 
 .flip-icon p {
@@ -1027,10 +1027,16 @@ textarea:focus {
   font-size: 16px;
 }
 
-.flip-icon i {
+.front-flip-icon i {
   transform: rotate(45deg);
   font-size: 25px;
 }
+
+.back-flip-icon i {
+  transform: rotate(-45deg);
+  font-size: 25px;
+}
+
 
 .bio-showcase {
   background-color: #0041a9;
@@ -1832,13 +1838,6 @@ textarea:focus {
 
   .pricing .grid > *:first-child,
   .pricing .grid-3 > *:first-child {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / span 1;
-  }
-
-  .pricing .grid > *:last-child,
-  .pricing .grid-3 > *:last-child {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1 / span 1;
