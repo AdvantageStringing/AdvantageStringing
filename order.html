@@ -35,7 +35,6 @@
                                     <li><a href="strings.html">Strings</a></li>
                                     <li><a href="order.html" class="underlined">Order</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="tournaments.html">Tournaments</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -50,7 +49,6 @@
                     <li><a href="strings.html">Strings</a></li>
                     <li><a href="order.html" class="underlined">Order</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="tournaments.html">Tournaments</a></li>
                 </ul>
             </nav>
         </div>
@@ -97,7 +95,75 @@
 
         </div>
     </section>
+    <section class="order-help container">
+        <div class="order-help-wrapper card centered">
+            <h2 class="bolded">Want Help With Your Order?</h2>
+            <p>If you want assistance with choosing strings and tension, contact us with your questions. We can help guide your selection to improve certain areas of your game. We take orders through call, text, and email, as well as this contact form and the order form below.</p>
+            <div class="flex">
+                <div class="blue-outline-button" id="helpBtn" onclick="openHelpDialog()">Contact Us</div>
+            </div>
+        </div>
+    </section>
 
+    <div class="spacer"></div>
+    
+
+    <div class="help-dialog" id="helpDialog">
+        <div class="help-dialog-content">
+            <div class="help-dialog-header">
+                <div class="flex">
+                    <span class="close" onclick="closeHelpDialog()">&times;</span>
+                </div>
+                <h1 class="bolded large-font">How can we help?</h1>
+                <p>Message us with your questions or order details.</p>
+            </div>
+            <div class="spacer"></div>
+            <div class="help-dialog-form" id="helpDialogForm">
+                <form id="helpForm">
+                    <div class="grid">
+                        <div class="form-control">
+                            <input class="form-input-field-help help-input" id="firstHelp" type="name" name="first-name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-control">
+                            <input class="form-input-field-help help-input" id="lastHelp" type="name" name="last-name" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div class="flex">
+                            <input class="form-input-field-help help-input" id="contactHelp" type="contact" name="phone-email" placeholder="Phone/Email" required>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <textarea name="message" id="messageHelp" placeholder="Message" rows="4" cols="35"></textarea>
+                    </div>
+                    <div class="flex">
+                        <div class="solid-blue-button" id="sendBtn" onclick="sendMessage()">Send Message</div>
+                    </div>
+                </form>
+            </div>
+            <div class="sending-screen" id="sendingScreen">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="circle">
+                       <div class="bar left">
+                          <div class="progress"></div>
+                       </div>
+                       <div class="bar right" id="progressBarHelp">
+                          <div class="progress"></div>
+                       </div>
+                     </div>
+                  </div>
+                <p>Sending Message...</p>
+            </div>
+            <div class="finished-screen" id="finishedScreen">
+                <p>Message Sent!</p>
+                <p>We will get back to you as soon as possible.</p>
+                <div class="flex">
+                    <div class="solid-blue-button" id="closeBtn" onclick="closeHelpDialog()">Close</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="order-page-content">
         <div class="order-page-grid container">
 
@@ -196,7 +262,7 @@
                                         <i class="fa fa-sad-tear fa-4x"></i>
                                     </div>
                                     
-                                    <p class="centered">Add a new racket under the "Racket Information" section on the left.</p>
+                                    <p class="centered">Add a new racket under the "Racket Information" section.</p>
                                 </li>
                                 <li class="racket-item" id="racketItem1">
                                     <div class="spacer"></div>
@@ -229,8 +295,11 @@
 
     <div class="complete-dialog" id="completeDialog">
         <div class="complete-dialog-content">
-            <span class="close" onclick="closeFinishDialog()">&times;</span>
+            
             <div class="complete-dialog-header">
+                <div class="flex">
+                    <span class="close" onclick="closeFinishDialog()">&times;</span>
+                </div>
                 <h1 class="bolded">Contact Information</h1>
                 <p>Last step before your order is finished!</p>
             </div>
@@ -266,29 +335,6 @@
                     <div class="form-control">
                         <input class="form-input-field complete-input" id="locationComplete" type="location" name="pref-location" placeholder="Prefered Drop-Off Location" required>
                     </div>
-                    <!--
-                    <div class="grid">
-                        <label class="form-control-check">
-                            <input type="checkbox" name="checkbox" />
-                            Pick-Up and Delivery
-                        </label>
-                        <label class="form-control-check">
-                            <input type="checkbox" name="checkbox" />
-                            Same-Day Stringing
-                        </label>
-                        <label class="form-control-check">
-                            <input type="checkbox" name="checkbox" />
-                            Grommits
-                        </label>
-                        <label class="form-control-check">
-                            <input type="checkbox" name="checkbox" />
-                            Shock Absorber
-                        </label>
-                        <label class="form-control-check">
-                            <input type="checkbox" name="checkbox" />
-                            Grip
-                        </label>
-                    </div> -->
                     
                     <div class="form-control">
                         <textarea name="notes" id="notesComplete" placeholder="Notes, special instructions, describe add-ons for each racket" rows="4" cols="35"></textarea>
@@ -328,71 +374,7 @@
 
     <div class="spacer"></div>
 
-    <section class="order-help container">
-        <div class="order-help-wrapper card centered">
-            <h2 class="bolded">Having Trouble?</h2>
-            <p>If you are having issues regarding your order or our website, contact us with any questions and we will get back to you as soon as possible.</p>
-            <div class="flex">
-                <div class="blue-outline-button" id="helpBtn" onclick="openHelpDialog()">Contact Us</div>
-            </div>
-        </div>
-    </section>
     
-
-    <div class="help-dialog" id="helpDialog">
-        <div class="help-dialog-content">
-            <span class="close" onclick="closeHelpDialog()">&times;</span>
-            <div class="help-dialog-header">
-                <h1 class="bolded large-font">How can we help?</h1>
-                <p>Message us with your questions</p>
-            </div>
-            <div class="spacer"></div>
-            <div class="help-dialog-form" id="helpDialogForm">
-                <form id="helpForm">
-                    <div class="grid">
-                        <div class="form-control">
-                            <input class="form-input-field-help help-input" id="firstHelp" type="name" name="first-name" placeholder="First Name" required>
-                        </div>
-                        <div class="form-control">
-                            <input class="form-input-field-help help-input" id="lastHelp" type="name" name="last-name" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    <div class="form-control">
-                        <div class="flex">
-                            <input class="form-input-field-help help-input" id="contactHelp" type="contact" name="phone-email" placeholder="Phone/Email" required>
-                        </div>
-                    </div>
-                    <div class="form-control">
-                        <textarea name="message" id="messageHelp" placeholder="Message" rows="4" cols="35"></textarea>
-                    </div>
-                    <div class="flex">
-                        <div class="solid-blue-button" id="sendBtn" onclick="sendMessage()">Send Message</div>
-                    </div>
-                </form>
-            </div>
-            <div class="sending-screen" id="sendingScreen">
-                <div class="circular">
-                    <div class="inner"></div>
-                    <div class="circle">
-                       <div class="bar left">
-                          <div class="progress"></div>
-                       </div>
-                       <div class="bar right" id="progressBarHelp">
-                          <div class="progress"></div>
-                       </div>
-                     </div>
-                  </div>
-                <p>Sending Message...</p>
-            </div>
-            <div class="finished-screen" id="finishedScreen">
-                <p>Message Sent!</p>
-                <p>We will get back to you as soon as possible.</p>
-                <div class="flex">
-                    <div class="solid-blue-button" id="closeBtn" onclick="closeHelpDialog()">Close</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="spacer" id="scrollSpacer"></div>
 
@@ -525,8 +507,10 @@
 
     <div class="mystery-string-dialog dialog-main" id="mysteryDialog">
         <div class="mystery-dialog-content dialog-content">
-            <span class="close" onclick="closeMysteryDialog()">&times;</span>
             <div class="mystery-dialog-header dialog-header">
+                <div class="flex">
+                    <span class="close" onclick="closeMysteryDialog()">&times;</span>
+                </div>
                 <h1 class="bolded">Other String Choice</h1>
                 <p>Let us know what string you want and we will get your exact specifications!</p>
             </div>
@@ -586,7 +570,6 @@
                     <li><a href="strings.html">Strings</a></li>
                     <li><a href="order.html">Order</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="tournaments.html">Tournaments</a></li>
                 </ul>
             </nav>
             
