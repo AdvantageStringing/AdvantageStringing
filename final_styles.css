@@ -1,5 +1,5 @@
 /* variables */
-/* Base Styles  */
+/* Base Styles */
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -305,6 +305,7 @@ textarea:focus {
 .complete-dialog-header .flex,
 .mystery-dialog-header .flex {
   justify-content: end;
+  -webkit-justify-content: flex-end;
 }
 
 .close {
@@ -357,6 +358,7 @@ textarea:focus {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .complete-dialog .solid-blue-button {
@@ -374,55 +376,6 @@ textarea:focus {
 .complete-dialog .order-complete-screen p {
   margin-bottom: 20px;
 }
-
-/* For Checkboxes 
-  .form-control-check {
-    font-family: system-ui, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.1;
-    display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.5em;
-  }
-  
-  .form-control-check + .form-control-check {
-    margin-top: 1em;
-  }
-  
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: var(--form-background);
-    margin: 0;
-  
-    font: inherit;
-    color: #0041A9;
-    width: 1em;
-    height: 1em;
-    border: 0.15em solid #0041A9;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-  
-    display: grid;
-    place-content: center;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-    background-color: CanvasText;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  } */
 
 /* Help Dialog */
 .help-dialog .grid,
@@ -1017,9 +970,11 @@ textarea:focus {
 
 .front-flip-icon .flex {
   justify-content: end;
+  -webkit-justify-content: flex-end;
 }
 .back-flip-icon .flex {
   justify-content: start;
+  -webkit-justify-content: flex-start;
 }
 
 .flip-icon p {
