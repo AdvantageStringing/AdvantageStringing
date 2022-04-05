@@ -132,7 +132,7 @@
 
     <section class="strings">
         <div class="strings-layout grid container">
-            <div class="string-item card">
+            <div class="string-item card hover">
                 <div class="card-inner">
                     <div class="front">
                         <div class="flex">
@@ -662,6 +662,14 @@
 </body>
 
 <script>
+
+    $(document).ready(function() {
+        $('.hover').on('touchstart touchend', function(e) {
+            console.log("going");
+            e.preventDefault();
+            $(this + " .card-inner").toggleClass('hover_effect');
+        });
+    });
 
     // List to hold question form inputs
 
