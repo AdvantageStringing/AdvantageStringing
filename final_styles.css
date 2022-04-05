@@ -915,7 +915,7 @@ textarea:focus {
 }
 
 
-.strings .card:hover .card-inner {
+.hover_effect {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
