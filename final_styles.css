@@ -378,12 +378,12 @@ textarea:focus {
 }
 
 /* Help Dialog */
-.help-dialog .grid,
-.help-dialog .grid-3 {
+.help-dialog .grid {
   width: 100%;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  grid-template-columns: 1fr 1fr;
 }
 
 .help-dialog .solid-blue-button {
@@ -899,6 +899,10 @@ textarea:focus {
   background-color: transparent;
   -webkit-perspective: 1000px;
   perspective: 1000px;
+}
+
+.strings .other-string-card {
+  display: none;
 }
 
 .strings .card-inner {
@@ -1676,6 +1680,42 @@ textarea:focus {
   margin-bottom: 30px;
 }
 
+.faqs .grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.faqs .help-dialog .grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.faqs .question-wrapper {
+  width: 100%;
+  background-color: lightgray;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.faqs .question-wrapper .question-title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.faqs .question-wrapper .question-answer {
+  font-size: 18px;
+}
+
+.faqs .card {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faqs .blue-outline-button {
+  margin-top: 15px;
+}
+
 @media (max-width: 1000px) {
   .navbar {
     height: 120px;
@@ -1805,6 +1845,10 @@ textarea:focus {
   .order-help .card {
     width: 90%;
   }
+
+  .faqs .card {
+    width: 90%;
+  }
 }
 
 @media (max-width: 820px) {
@@ -1903,10 +1947,27 @@ textarea:focus {
 
   .strings-showcase .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.6fr;
+    grid-template-rows: auto;
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
+  }
+
+  .strings-showcase .strings-showcase-card {
+    display: none;
+  }
+
+  .strings .other-string-card {
+    display: block;
+  }
+
+  .strings .other-string-card img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .strings .blue-outline-button {
+    margin-top: 5px;
   }
 
   .strings .grid {
