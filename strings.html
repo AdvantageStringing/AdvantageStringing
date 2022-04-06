@@ -19,7 +19,7 @@
     <title>Advantage Stringing</title>
 </head>
 <body>
-    <!-- Navbar  -->
+    <!-- Navbar -->
     <div class="navbar">
         <div class="container flex">
             <div class="logo">
@@ -181,7 +181,7 @@
                     </div>
                 </div>
             </div>
-            <div class="string-item card">
+            <div class="string-item card hover">
                 <div class="card-inner">
                     <div class="front">
                         <div class="flex">
@@ -231,7 +231,7 @@
                     </div>
                 </div>
             </div>
-            <div class="string-item card">
+            <div class="string-item card hover">
                 <div class="card-inner">
                     <div class="front">
                         <div class="flex">
@@ -664,10 +664,10 @@
 <script>
 
     $(document).ready(function() {
-        $('.hover').on('touchstart touchend', function(e) {
-            console.log("going");
+        $('.hover').on('mousedown', function(e) {
+            console.log(this);
             e.preventDefault();
-            $(this + " .card-inner").toggleClass('hover_effect');
+            $(this).children("div:first").toggleClass('hover_effect');
         });
     });
 
