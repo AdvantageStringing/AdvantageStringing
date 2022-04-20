@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
     <link rel="stylesheet" href="final_styles.css">
     <script src="email.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -23,6 +27,7 @@
             emailjs.init("user_72IB2UYZzZacDY5d0YCyj");
         })();
     </script>
+    <link rel="icon" href="Images/favicon.png">
     <title>Advantage Stringing</title>
 </head>
 <body>
@@ -81,7 +86,11 @@
             </div>
             <div class="question-wrapper">
                 <p class="question-title">How do I choose the best strings for my game?</p>
-                <p class="question-answer">All the items on the string page have descriptions and statistics for the characteristics of that string. Pick the one that suits your game the best or one that helps you achieve your goals (Ex: more power). We can also help guide your decision and select the best strings for your playing style. </p>
+                <p class="question-answer">All the items on the "Strings" page have descriptions and statistics for the characteristics of that string. Pick the one that suits your game the best or one that helps you achieve your goals (Ex: more power). We can also help guide your decision and select the best strings for your playing style. </p>
+            </div>
+            <div class="question-wrapper">
+                <p class="question-title">What machine do you string with?</p>
+                <p class="question-answer">We string all our rackets with the Prince Neos 1000 machine. This is one of the best machines on the markets, and was used in most tennis shops until just recently.</p>
             </div>
             <div class="question-wrapper">
                 <p class="question-title">When and how do I pay for my order?</p>
@@ -118,16 +127,13 @@
             <h2 class="bolded">Still need assistance?</h2>
             <p>If your question hasn't been answered already, fill our the contact form below with your inquiry. </p>
             <div class="flex">
-                <div class="blue-outline-button" id="helpBtn" onclick="openHelpDialog()">Contact Us</div>
+                <div><a class="blue-outline-button" id="helpBtn" href="#helpDialog" rel="modal:open">Contact Us</a></div>
             </div>
         </div>
 
-        <div class="help-dialog" id="helpDialog">
+        <div class="modal help-dialog" id="helpDialog">
             <div class="help-dialog-content">
                 <div class="help-dialog-header">
-                    <div class="flex">
-                        <span class="close" onclick="closeHelpDialog()">&times;</span>
-                    </div>
                     <h1 class="bolded large-font">How can we help?</h1>
                     <p>Message us with your questions or order details.</p>
                 </div>
@@ -159,21 +165,21 @@
                     <div class="circular">
                         <div class="inner"></div>
                         <div class="circle">
-                        <div class="bar left">
-                            <div class="progress"></div>
-                        </div>
-                        <div class="bar right" id="progressBarHelp">
-                            <div class="progress"></div>
-                        </div>
-                        </div>
-                    </div>
+                           <div class="bar left">
+                              <div class="progress"></div>
+                           </div>
+                           <div class="bar right" id="progressBarHelp">
+                              <div class="progress"></div>
+                           </div>
+                         </div>
+                      </div>
                     <p>Sending Message...</p>
                 </div>
                 <div class="finished-screen" id="finishedScreen">
                     <p>Message Sent!</p>
                     <p>We will get back to you as soon as possible.</p>
                     <div class="flex">
-                        <div class="solid-blue-button" id="closeBtn" onclick="closeHelpDialog()">Close</div>
+                        <a class="solid-blue-button" href="#" rel="modal:close">Close</a>
                     </div>
                 </div>
             </div>
@@ -218,13 +224,7 @@
         this.message = message
     }
 
-    // When the user clicks on the button, open the dialog box
-    function openHelpDialog() {
-        $("#helpDialog").css("display", "block");
-    }
-
-    // When the user clicks on <span> (x), close the dialog box
-    function closeHelpDialog() {
+    $('#helpDialog').on($.modal.CLOSE, function(event, modal) {
         //Close dialog and reset content to input form
         $("#helpDialog").css("display", "none");
         $("#finishedScreen").css("display", "none");
@@ -243,7 +243,7 @@
         $("#contactHelp").css("border", "1.5px solid #fff");
         $("#contactHelp").css("border-bottom", "1.5px solid #b4becb");
         $("#messageHelp").css("border", "1.5px solid #b4becb");
-    }
+    });
 
     //when user clicks on send message button, change to loading screen
     function sendMessage() {
@@ -270,8 +270,6 @@
             }
             
         }
-
-        console.log("done");
 
         //Move dialog content to loading screen
         $("#errorMessageHelp").css("display", "none");
