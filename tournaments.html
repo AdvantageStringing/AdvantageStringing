@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM0WZB3LWZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WM0WZB3LWZ');
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     <link rel="stylesheet" href="final_styles.css">
+    <script src="email.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("cQoN4pdinqHtYKn_u");
+        })();
+    </script>
+    <link rel="icon" href="Images/favicon.png">
     <title>Advantage Stringing</title>
 </head>
 <body>
@@ -25,7 +46,8 @@
                                     <li><a href="strings.html">Strings</a></li>
                                     <li><a href="order.html">Order</a></li>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="tournaments.html" class="underlined">Tournaments</a></li>
+                                    <li><a href="faqs.html">FAQs</a></li>
+                                    <li><a href="tournaments.html" class="underlined">Events</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -40,24 +62,104 @@
                     <li><a href="strings.html">Strings</a></li>
                     <li><a href="order.html">Order</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="tournaments.html" class="underlined">Tournaments</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="tournaments.html" class="underlined">Events</a></li>
                 </ul>
             </nav>
         </div>
     </div>
 
-    <div class="spacer"></div>
-    <div class="spacer"></div>
+    <!-- Showcase -->
+    <section class="bio-showcase">
+        <div class="bio-showcase-text grid">
+            <div class="content">
+                <h1 class="large-font">Events</h1>
+                <p>Register for tournaments and learn more information about our events</p>
+            </div>
+        </div>
+    </section>
 
-    <h1 class="tournament-note">Coming Soon!</h1>
+    <!--
+    
+    - Prize Money and distribution
+    - Dates, times, location
+    - Format (who is eligible, scoring)
+    - Have a tally of people registered
+    - Perks for people who register
+    
+    - Registration Form
 
-    <div class="flex">
-        <i class="fa fa-laugh-beam fa-4x"></i>
-    </div>
+    -->
+
+    <!-- Event Section -->
+    <section class="bio events">
+        <div class="container grid">
+            <div>
+                <h1 class="eventHeader">2024 Summer Cash Cup</h1>
+                <p class="largeText">$20 | June 21st - June 22nd</p>
+                <p class="smallText">3 Players registered</p>
+                <h3>Prize Money</h3>
+                <p><b>1st Place: </b>$100</p>
+                <p><b>2nd Place: </b>$50</p>
+                <p><b>3rd Place: </b>$20</p>
+                <div class="spacer"></div>
+                <p>Every participant will recieve:</p>
+                <p>2 Guaranteed matches</p>
+                <p>1 Coupon for a 50% racket stringing discount</p>
+            </div>
+            <div>
+                <p><b>Location: </b>Roseville Area High School - 1122 County Road B2 W, St Paul, MN 55113</p>
+                <p><b>Time: </b>First round matches will start at 8am</p>
+                <h3>Format</h3>
+                <p><b>Eligibility: </b>Players of all age, ability, and gender are eligible to participate in this event.</p>
+                <p><b>Scoring: </b>Each match will be best of 3 sets, with a super tiebreaker in place of a 3rd set. We will do no-ad scoring.</p>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="solid-blue-button" ><a style="color: #fff;" href="#registerTarget">Register Below</a></div>
+        </div>  
+    </section>
+
+    <hr style="width: 70%; margin: 10px auto;" id="registerTarget">
+
+    <section>
+        <div class="event-registration container">
+        <h1>Register</h1>
+        <p>Event: 2024 Summer Cash Cup</p>
+        <p>Price: $20</p>
+        <p class="top-margin">We take payment through Venmo or cash. Our Venmo is @cathalmee, and please write your full name into the payment description.</p>
+        <form id="completeForm">
+            <div class="grid">
+                <div class="form-control">
+                    <input class="form-input-field complete-input" id="firstComplete" type="name" name="first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-control">
+                    <input class="form-input-field complete-input" id="lastComplete" type="name" name="last-name" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="form-control">
+                    <input class="form-input-field complete-input" id="emailComplete" type="contact" name="phone-email" placeholder="Phone Number" required>
+                </div>
+                <div class="form-control">
+                    <input class="form-input-field complete-input" id="ageComplete" type="contact" name="phone-email" placeholder="Age" required>
+                </div>
+            </div>
+            
+            <div class="form-control">
+                <input class="form-input-field complete-input" id="paymentComplete" type="contact" name="phone-email" placeholder="Payment Method (Venmo or Cash)" required>
+            </div>
+            <p class="top-margin smallText">I hereby assume all risks and hazards incidental to the conduct of the activity described above. In the event of an emergency, I authorize the Advantage Stringing staff to provide or arrange for basic medical care. </p>
+            <p class="top-margin smallText">I give permission for images of myself, captured through video or photo, to be used for the purposes of promoting Advantage Stringing and waive any rights of compensation or ownership there to. If you would like to opt out at any time, contact us at AdvantageStringers@gmail.com.</p>
+            <p class="top-margin">By clicking "Complete Registration" below, you recognize and consent to the above statements.</p>
+            <div class="flex">
+                <div class="solid-blue-button" id="completeBtn" onclick="sendMessage()">Complete Registration</div>
+            </div>
+        </form>
+        </div>
+    </section>
 
     <div class="spacer"></div>
-    <div class="spacer"></div>
-
 
     <!-- Footer -->
     <footer class="footer bg-dark py-5">
@@ -77,7 +179,8 @@
                     <li><a href="strings.html">Strings</a></li>
                     <li><a href="order.html">Order</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="tournaments.html">Tournaments</a></li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="tournaments.html">Events</a></li>
                 </ul>
             </nav>
             
@@ -85,4 +188,37 @@
     </footer>
     
 </body>
+
+<script>
+
+    function Registration(first, last, contact, age, payment) {
+        this.first = first,
+        this.last = last,
+        this.contact = contact,
+        this.age = age,
+        this.payment = payment
+    }
+
+    function sendMessage() {
+        let registrationObj = new Registration(
+            $("#firstComplete").val(),
+            $("#lastComplete").val(),
+            $("#emailComplete").val(),
+            $("#ageComplete").val(),
+            $("#paymentComplete").val()
+        );
+
+        $("#firstComplete").val("");
+        $("#lastComplete").val("");
+        $("#emailComplete").val("");
+        $("#ageComplete").val("");
+        $("#paymentComplete").val("");
+
+        //Put code here for emailing form inputs
+        sendMailEventRegister(registrationObj);     
+    }
+
+</script>
+
+
 </html>
