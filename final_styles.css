@@ -1013,6 +1013,48 @@ textarea:focus {
   font-size: 15px;
 }
 
+.events h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.events .smallText {
+  font-size: 14px;
+}
+
+.events .largeText {
+  font-size: 18px;
+}
+
+.events .solid-blue-button {
+  margin-top: 15px;
+}
+
+.events .spacer {
+  height: 15px;
+}
+
+.event-registration input {
+  margin-top: 20px;
+}
+
+.event-registration {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-registration .solid-blue-button {
+  margin-top: 20px;
+}
+
+.event-registration .top-margin {
+  margin-top: 15px;
+}
+
+.event-registration .smallText {
+  font-size: 13px;
+}
+
 /* Order Page */
 .order-page-content {
   height: 450px;
