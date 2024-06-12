@@ -5,6 +5,13 @@ function sendMailHelp(content) {
     })
 }
 
+function sendMailEventRegister(content) {
+    emailjs.send("service_xtmf4k9", "template_oudifrq", content)
+    .then(function(res){
+        console.log("success", res.status);
+    })
+}
+
 function sendMailComplete(content) {
     var racketVals = [];
     var allRacketVals = [];
